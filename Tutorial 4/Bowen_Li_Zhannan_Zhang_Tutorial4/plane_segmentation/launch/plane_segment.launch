@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+
+  <node pkg="rosbag" type="play" name="player" output="screen" args="-l $(find plane_segmentation)/bag/hsrb_tutorial_4.bag"/>
+
+  <node pkg="plane_segmentation" type="plane_segmentation_node" name="plane_segmentation_node" output="screen"/>
+
+  <node type="rviz" name="rviz" pkg="rviz" args="$(find plane_segmentation)/config/plan_segment.rviz" />
+
+</launch>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+<node pkg="from2dto3d" type="from2Dto3D_node" name="from2Dto3D_node"/>
+
+<node pkg="object_recognition" type="objectRecognition_node" name="objectRecognition_node" output="screen"/>
+
+</launch>

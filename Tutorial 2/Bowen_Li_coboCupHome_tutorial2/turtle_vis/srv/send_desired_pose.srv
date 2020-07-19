@@ -1,0 +1,8 @@
+#>>>>TODO:USE DESIRED POSE MSG
+float64 x
+float64 y
+float64 theta
+#turtle_vis/DesiredPose poseMsg
+---
+#>>>>TODO:RETURN AN INT
+int8 reply

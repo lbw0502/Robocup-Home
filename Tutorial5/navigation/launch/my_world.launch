@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+    <launch>
+      <arg name="robot_name" default="$(optenv ROBOT_NAME hsrb)" />
+      <include file="$(find hsrb_gazebo_launch)/launch/include/hsrb_gazebo_common.xml" >
+        <arg name="map" value="$(find tmc_potential_maps)/maps/white_space/map.yaml" />
+        <arg name="world_name" value="[Path to the world which you made]" />
+        <arg name="robot_pos" value="[Initial pose of the robot]" />
+        <arg name="use_laser_odom" value="false" />
+      </include>
+    </launch>
+      <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigation)/map/config.rviz" if="$(arg rviz)"/>

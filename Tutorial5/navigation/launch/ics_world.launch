@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+    <launch>
+      <arg name="robot_name" default="$(optenv ROBOT_NAME hsrb)" />
+      <arg name="map" default="$(find navigation)/map/map.yaml"/>
+      <arg name="rviz" default="true"/>
+    <include file="$(find hsrb_common_launch)/launch/include/hsrb_navigation.xml"
+           if="$(arg use_navigation)">
+            <arg name="namespace" value="$(arg namespace)"/>
+            <arg name="sim" value="$(arg sim)"/>
+            <arg name="map" value="$(arg map)"/>
+    </include>
+      <node name="rviz" pkg="rviz" type="rviz" args="-d $(find hsrb_common_launch)/config/hsrb_display_full_$(arg robot_name).rviz" if="$(arg rviz)"/>
+
+    </launch>

@@ -1,0 +1,23 @@
+<launch>
+
+  <!-- By default, we do not start a database (it can be large) -->
+  <arg name="db" default="false" />
+
+  <!-- By default, we start rviz -->
+  <arg name="use_gui" default="true" />
+
+  <!-- By default, we are not in debug mode -->
+  <arg name="debug" default="false" />
+
+  <arg name="robot_name" default="hsrb" />
+
+  <!-- By default we do not overwrite the URDF. Change the following to true to change the default behavior -->
+  <arg name="load_robot_description" default="true"/>
+
+
+  <!-- Relay joint_states for MoveIt Commander -->
+  <node name="relay_joint_states" pkg="topic_tools" type="relay" args="/hsrb/joint_states /joint_states">
+    <param name="lazy" value="true"/>
+  </node>
+
+</launch>
